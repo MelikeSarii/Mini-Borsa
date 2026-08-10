@@ -1,29 +1,51 @@
 package com.miniborsa.orderservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.miniborsa.orderservice.model.Order;
 import com.miniborsa.orderservice.service.OrderService;
-@RestController// bu sınıfın api olduğunu söyler
+import com.miniborsa.orderservice.service.StockClient;
+
+@RestController
 public class OrderController {
-	private final OrderService orderService;
 
-	public OrderController(OrderService orderService) {
-	    this.orderService = orderService;
-	}
+    private final OrderService orderService;
+    private final StockClient stockClient;
 
-    @GetMapping("/hello")//biri GET/hello isteği atarsa bu metot çalışır
-    public String hello() {//cevap olarak bunu gönderir
+    public OrderController(OrderService orderService, StockClient stockClient) {
+        this.orderService = orderService;
+        this.stockClient = stockClient;
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
         return "Merhaba Mini Borsa!";
     }
-    @PostMapping("/order")
-    public Order createOrder(@RequestBody Order order) {
-        return orderService.createOrder(order);
 
+    @PostMapping("/order")
+    public Order createOrder(@RequestBody Order order) throws Exception {
+        return orderService.createOrder(order);
     }
 
+    @GetMapping("/order")
+    public List<Order> getOrders() {
+        return orderService.getAllOrders();
+    }
+
+    @GetMapping("/order/{id}")
+    public Order getOrderById(@PathVariable Long id) {
+        return orderService.getOrderById(id);
+    }
+
+    @DeleteMapping("/order/{id}")
+    public void deleteOrder(@PathVariable Long id) {
+        orderService.deleteOrder(id);
+    }
+
+    @GetMapping("/stocks")
+    public String getStocksFromStockService() {
+        return stockClient.getStocks();
+    }
 }

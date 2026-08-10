@@ -1,25 +1,25 @@
-package com.miniborsa.orderservice.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-@Entity //bu sınıf veritabanında tablo olacak
-@Table(name = "orders")
+package com.example.matchingengine.model;
 
 public class Order {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//id yi biz yazmıyoruz db kendi veriyo
-    private Long id;
-
     private String symbol;
     private int qty;
-    private String side;
+    private String side; // BUY / SELL
     private String customerName;
     private Double price;
+    private String status; // NEW / WAITING / PARTIALLY_FILLED / FILLED
 
     public Order() {
+    }
+
+    public Order(String symbol, int qty, String side,
+                 String customerName, Double price) {
+        this.symbol = symbol;
+        this.qty = qty;
+        this.side = side;
+        this.customerName = customerName;
+        this.price = price;
+        this.status = "NEW";
     }
 
     public String getSymbol() {
@@ -60,5 +60,13 @@ public class Order {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
