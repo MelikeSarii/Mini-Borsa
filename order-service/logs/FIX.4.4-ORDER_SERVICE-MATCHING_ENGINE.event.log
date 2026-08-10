@@ -146,3 +146,19 @@
 20260810-07:43:58: Received logon
 20260810-07:45:17: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
 20260810-07:45:18: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260810-12:04:24: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260810-12:04:24: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260810-12:04:24: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260810-12:04:24: MINA session created: local=/127.0.0.1:62820, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260810-12:04:25: Initiated logon request
+20260810-12:04:25: Received logon
+20260810-12:06:55: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
+20260810-12:06:56: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260810-12:08:07: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260810-12:08:07: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260810-12:08:07: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260810-12:08:07: MINA session created: local=/127.0.0.1:63007, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260810-12:08:08: Initiated logon request
+20260810-12:08:08: Received logon
+20260810-12:09:17: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
+20260810-12:09:17: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)

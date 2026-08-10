@@ -19,16 +19,15 @@ public class MatchingEngineApplication {
 
     public static void main(String[] args) throws Exception {
 
-        SpringApplication.run(MatchingEngineApplication.class, args);
+        var context = SpringApplication.run(MatchingEngineApplication.class, args);
 
         // FIX ayarlarını oku
         SessionSettings settings =
                 new SessionSettings("src/main/resources/acceptor.cfg");
 
-        // FIX uygulamamız
-        MatchingEngine matchingEngine = new MatchingEngine();
-
-        FixApplication application = new FixApplication(matchingEngine);
+        // Spring'in oluşturduğu FixApplication'ı kullan
+        FixApplication application =
+                context.getBean(FixApplication.class);
 
         // Mesajların saklanması
         FileStoreFactory storeFactory =
