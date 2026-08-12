@@ -162,3 +162,37 @@
 20260810-12:08:08: Received logon
 20260810-12:09:17: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
 20260810-12:09:17: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260812-06:58:12: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260812-06:58:12: Session state is not current; resetting FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260812-06:58:12: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260812-06:58:12: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260812-06:58:12: MINA session created: local=/127.0.0.1:4105, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260812-06:58:13: Initiated logon request
+20260812-06:58:13: Received logon
+20260812-10:24:49: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260812-10:24:49: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260812-10:24:49: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260812-10:24:49: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260812-11:56:20: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260812-11:56:20: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260812-11:56:20: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260812-11:56:20: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260812-11:56:50: MINA session created: local=/127.0.0.1:9494, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260812-11:56:51: Initiated logon request
+20260812-11:56:51: Received logon
+20260812-12:02:47: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260812-12:02:47: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260812-12:02:47: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260812-12:02:47: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260812-12:03:15: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260812-12:03:15: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260812-12:03:15: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260812-12:03:15: MINA session created: local=/127.0.0.1:9730, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260812-12:03:16: Initiated logon request
+20260812-12:03:16: Received logon
+20260812-12:18:57: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260812-12:18:57: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260812-12:18:57: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260812-12:18:57: MINA session created: local=/127.0.0.1:51125, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260812-12:18:58: Initiated logon request
+20260812-12:18:58: Received logon

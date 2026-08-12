@@ -1,7 +1,7 @@
 package com.example.matchingengine.model;
 
-public class Order {
-
+public class Order {//veriyi taşıyan sınıf
+    private String orderId;
     private String symbol;
     private int qty;
     private String side; // BUY / SELL
@@ -12,14 +12,20 @@ public class Order {
     public Order() {
     }
 
-    public Order(String symbol, int qty, String side,
+    public Order(String orderId,String symbol, int qty, String side,
                  String customerName, Double price) {
+        this.orderId=orderId;
         this.symbol = symbol;
         this.qty = qty;
         this.side = side;
         this.customerName = customerName;
         this.price = price;
         this.status = "NEW";
+    }
+    public String getOrderId(){return orderId;}
+    public void setOrderId(String orderId)
+    {
+        this.orderId=orderId;
     }
 
     public String getSymbol() {

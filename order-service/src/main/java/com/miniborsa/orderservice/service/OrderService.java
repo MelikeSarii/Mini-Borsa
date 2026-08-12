@@ -3,7 +3,7 @@ package com.miniborsa.orderservice.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-
+import java.util.UUID;
 import com.miniborsa.orderservice.fix.FixApplication;
 import com.miniborsa.orderservice.model.Order;
 import com.miniborsa.orderservice.repository.OrderRepository;
@@ -22,8 +22,10 @@ public class OrderService {
 
 	// Yeni emir geldiğinde FIX üzerinden Matching Engine'e gönderiyoruz
 	public Order createOrder(Order order) throws Exception {
-
+		String orderId = UUID.randomUUID().toString();
+		order.setOrderId(orderId);
 		fixApplication.sendNewOrder(
+				order.getOrderId(),
 				order.getSymbol(),
 				order.getQty(),
 				order.getSide(),
@@ -67,8 +69,49 @@ public class OrderService {
 		return null;
 	}
 
+	// Emri FIX üzerinden replace eder
+	public Order replaceOrder(
+			Long id,
+			int newQty,
+			Double newPrice) throws Exception {
+
+		Order order = orderRepository.findById(id).orElse(null);
+
+		if (order == null) {
+			return null;
+		}
+
+		// Matching Engine'e Replace isteği gönder
+		fixApplication.sendReplaceOrder(
+				order.getOrderId(),
+				order.getSymbol(),
+				order.getSide(),
+				newQty,
+				newPrice
+		);
+
+		// Kendi veritabanımızdaki emri de güncelle
+		order.setQty(newQty);
+		order.setPrice(newPrice);
+
+		return orderRepository.save(order);
+	}
+
 	// Emri sil
-	public void deleteOrder(Long id) {
+	public void deleteOrder(Long id) throws Exception {
+
+		Order order = orderRepository.findById(id).orElse(null);
+
+		if (order == null) {
+			return;
+		}
+
+		fixApplication.sendCancelOrder(
+				order.getOrderId(),
+				order.getSymbol(),
+				order.getSide()
+		);
+
 		orderRepository.deleteById(id);
 	}
 }

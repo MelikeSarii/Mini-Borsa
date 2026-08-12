@@ -40,8 +40,20 @@ public class OrderController {
     }
 
     @DeleteMapping("/order/{id}")
-    public void deleteOrder(@PathVariable Long id) {
+    public void deleteOrder(@PathVariable Long id)throws Exception {
         orderService.deleteOrder(id);
+    }
+
+    @PutMapping("/order/{id}")
+    public Order replaceOrder(
+            @PathVariable Long id,
+            @RequestBody Order newOrder) throws Exception {
+
+        return orderService.replaceOrder(
+                id,
+                newOrder.getQty(),
+                newOrder.getPrice()
+        );
     }
 
     @GetMapping("/stocks")

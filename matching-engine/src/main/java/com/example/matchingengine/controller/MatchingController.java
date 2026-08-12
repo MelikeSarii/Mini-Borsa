@@ -4,7 +4,8 @@ import com.example.matchingengine.engine.MatchingEngine;
 import com.example.matchingengine.model.Order;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController//rest api kısmı
+//http isteklerini karşılmak için kullanılır
 public class MatchingController {
 
     private final MatchingEngine matchingEngine;

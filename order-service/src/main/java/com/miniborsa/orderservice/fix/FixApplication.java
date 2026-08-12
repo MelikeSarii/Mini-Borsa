@@ -8,6 +8,8 @@ import quickfix.SessionID;
 import quickfix.field.*;
 import quickfix.fix44.NewOrderSingle;
 import java.util.UUID;
+import quickfix.fix44.OrderCancelRequest;
+import quickfix.fix44.OrderCancelReplaceRequest;
 @Component
 public class FixApplication implements Application {
 
@@ -60,6 +62,7 @@ public class FixApplication implements Application {
 
     // Yeni emri FIX mesajına çevirip Matching Engine'e gönderir
     public void sendNewOrder(
+            String orderId,
             String symbol,
             int qty,
             String side,
@@ -70,7 +73,7 @@ public class FixApplication implements Application {
         NewOrderSingle order = new NewOrderSingle();
 
         // Her emir için benzersiz ID
-        order.set(new ClOrdID(UUID.randomUUID().toString()));
+        order.set(new ClOrdID(orderId));
 
         // Hisse kodu
         order.set(new Symbol(symbol));
@@ -110,4 +113,87 @@ public class FixApplication implements Application {
 
         System.out.println("New Order FIX olarak gönderildi: " + order);
     }
+
+    public void sendCancelOrder(
+            String originalOrderId,
+            String symbol,
+            String side) throws Exception
+    {
+        OrderCancelRequest cancel =new OrderCancelRequest();
+        //cancel isteğinin kendi benzersiz idsi
+        cancel.set(new ClOrdID(UUID.randomUUID().toString()));
+        //iptal edilmek istenen eski emrin idsi
+        cancel.set(new OrigClOrdID(originalOrderId));
+        //hisse
+        cancel.set(new Symbol(symbol));
+
+        if(side.equalsIgnoreCase("BUY"))
+        {
+            cancel.set(new Side(Side.BUY));
+        }
+        else
+        {
+            cancel.set(new Side(Side.SELL));
+        }
+        cancel.set(new TransactTime());
+
+        Session.sendToTarget(cancel,sessionId);
+        System.out.println(
+                "Cancel Order FIX olarak gönderildi: "
+                        + originalOrderId
+        );
+    }
+    // Replace isteğini FIX mesajına çevirip Matching Engine'e gönderir
+    public void sendReplaceOrder(
+            String originalOrderId,
+            String symbol,
+            String side,
+            int newQty,
+            Double newPrice) throws Exception {
+
+        // FIX 4.4 Order Cancel/Replace Request
+        OrderCancelReplaceRequest replace =
+                new OrderCancelReplaceRequest();
+
+        // Replace isteğinin kendi benzersiz ID'si
+        replace.set(new ClOrdID(UUID.randomUUID().toString()));
+
+        // Değiştirilecek eski emrin ID'si
+        replace.set(new OrigClOrdID(originalOrderId));
+
+        // Hisse
+        replace.set(new Symbol(symbol));
+
+        // BUY / SELL
+        if (side.equalsIgnoreCase("BUY")) {
+            replace.set(new Side(Side.BUY));
+        } else {
+            replace.set(new Side(Side.SELL));
+        }
+
+        // Yeni miktar
+        replace.set(new OrderQty(newQty));
+
+        // Yeni fiyat
+        if (newPrice != null) {
+            replace.set(new Price(newPrice));
+            replace.set(new OrdType(OrdType.LIMIT));
+        } else {
+            replace.set(new OrdType(OrdType.MARKET));
+        }
+
+        // Emir zamanı
+        replace.set(new TransactTime());
+
+        // Matching Engine'e gönder
+        Session.sendToTarget(replace, sessionId);
+
+        System.out.println(
+                "Replace Order FIX olarak gönderildi: "
+                        + originalOrderId
+                        + " | New Qty: " + newQty
+                        + " | New Price: " + newPrice
+        );
+    }
+
 }

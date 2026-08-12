@@ -16,7 +16,7 @@ public class MatchingEngine {
 
 
     // Gelen emri BUY veya SELL kuyruğuna koyuyoruz
-    public void addOrder(Order order) {
+    public void addOrder(Order order) {//gelen emti buy sell kuyruğuna ekler
 
         order.setStatus("NEW");
 
@@ -26,6 +26,8 @@ public class MatchingEngine {
 
             System.out.println(
                     "New BUY Order Received: "
+                       +order.getOrderId()
+                            +"|"
                             + order.getSymbol()
             );
 
@@ -35,6 +37,8 @@ public class MatchingEngine {
 
             System.out.println(
                     "New SELL Order Received: "
+                            +order.getOrderId()
+                            +"|"
                             + order.getSymbol()
             );
 
@@ -59,7 +63,7 @@ public class MatchingEngine {
 
     // BUY ve SELL emirlerini eşleştiriyoruz
     private void matchOrders() {
-
+  //buy ve selli karşıalştırıp eşliyo
         if (buyQueue.isEmpty() || sellQueue.isEmpty()) {
             return;
         }
@@ -163,7 +167,68 @@ public class MatchingEngine {
         }
     }
 
+    public Order findOrderById(String orderId)
+    {
+        for(Order order:buyQueue)
+        {
+            if(order.getOrderId().equals(orderId))
+            {
+                return order;
+            }
+        }
+        for(Order order:sellQueue)
+        {
+            if(order.getOrderId().equals(orderId))
+            {
+                return order;
+            }
+        }
+        return null;
+    }
 
+    public boolean cancelOrder(String orderId)
+    {
+        Order order=findOrderById(orderId);
+                if(order==null)
+                {
+                    return false;
+                }
+                if("BUY".equalsIgnoreCase(order.getSide()))
+                {
+                    buyQueue.remove(order);
+                }
+                else {
+                    sellQueue.remove(order);
+                }
+                order.setStatus("CANCELLED");
+        System.out.println("Order Cancelled: " + orderId);
+        return true;
+    }
+
+    public boolean replaceOrder(
+            String orderId,
+            int newQty,
+            Double newPrice) {
+
+        Order order = findOrderById(orderId);
+
+        if (order == null) {
+            return false;
+        }
+
+        order.setQty(newQty);
+        order.setPrice(newPrice);
+
+        order.setStatus("WAITING");
+
+        System.out.println(
+                "Order Replaced: " + orderId
+                        + " | New Qty: " + newQty
+                        + " | New Price: " + newPrice
+        );
+
+        return true;
+    }
     // Market ve Limit emirlerinin fiyat kontrolü
     private boolean isPriceMatch(Order buy, Order sell) {
 
@@ -177,4 +242,8 @@ public class MatchingEngine {
         // BUY fiyatı SELL fiyatına eşit veya yüksek olmalı
         return buy.getPrice() >= sell.getPrice();
     }
+
+
+
+
 }

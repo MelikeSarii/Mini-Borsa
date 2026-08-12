@@ -12,7 +12,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//id yi biz yazmıyoruz db kendi veriyo
     private Long id;
-
+    private String orderId;
     private String symbol;
     private int qty;
     private String side;
@@ -21,6 +21,16 @@ public class Order {
 
     public Order() {
     }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getOrderId(){return orderId;}
+    public  void setOrderId(String orderId){this.orderId=orderId;}
 
     public String getSymbol() {
         return symbol;
