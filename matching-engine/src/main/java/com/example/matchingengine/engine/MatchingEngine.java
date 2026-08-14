@@ -6,7 +6,8 @@ import com.example.matchingengine.fix.ExecutionReportService;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import com.example.matchingengine.repository.OrderRepository;
-
+import jakarta.annotation.PostConstruct;
+import java.util.List;
 @Service
 public class MatchingEngine {
 
@@ -25,8 +26,7 @@ public class MatchingEngine {
     // Gelen emri BUY veya SELL kuyruğuna koyuyoruz
     public void addOrder(Order order) {//gelen emti buy sell kuyruğuna ekler
 
-        order.setStatus("NEW");
-        orderRepository.save(order);
+
         if ("BUY".equalsIgnoreCase(order.getSide())) {
 
             buyQueue.add(order);
@@ -58,6 +58,10 @@ public class MatchingEngine {
         }
 
         order.setStatus("WAITING");
+        // WAITING olarak PostgreSQL'e kaydet
+        orderRepository.save(order);
+
+        matchOrders();
     }
 
 
@@ -139,7 +143,7 @@ public class MatchingEngine {
                 if (buy.getQty() == 0) {
 
                     buy.setStatus("FILLED");
-
+                    orderRepository.save(buy);
                     buyQueue.remove(buy);
 
                     System.out.println(
@@ -149,7 +153,7 @@ public class MatchingEngine {
                 } else {
 
                     buy.setStatus("PARTIALLY_FILLED");
-
+                    orderRepository.save(buy);
                     System.out.println(
                             "BUY Order Partially Filled"
                     );
@@ -165,6 +169,7 @@ public class MatchingEngine {
                 if (sell.getQty() == 0) {
 
                     sell.setStatus("FILLED");
+                    orderRepository.save(sell);
 
                     sellQueue.remove(sell);
 
@@ -226,6 +231,7 @@ public class MatchingEngine {
                     sellQueue.remove(order);
                 }
                 order.setStatus("CANCELLED");
+        orderRepository.save(order);
         System.out.println("Order Cancelled: " + orderId);
         return true;
     }
@@ -241,10 +247,29 @@ public class MatchingEngine {
             return false;
         }
 
+        // Önce eski kuyuktaki halini çıkar
+        if ("BUY".equalsIgnoreCase(order.getSide())) {
+            buyQueue.remove(order);
+        } else {
+            sellQueue.remove(order);
+        }
+
         order.setQty(newQty);
         order.setPrice(newPrice);
-
         order.setStatus("WAITING");
+
+        // Yeni haliyle tekrar kuyruğa koy
+        if ("BUY".equalsIgnoreCase(order.getSide())) {
+            buyQueue.add(order);
+        } else {
+            sellQueue.add(order);
+        }
+
+        // PostgreSQL'i güncelle
+        orderRepository.save(order);
+
+        // Hemen eşleşme dene
+        matchOrders();
 
         System.out.println(
                 "Order Replaced: " + orderId
@@ -267,7 +292,40 @@ public class MatchingEngine {
         // BUY fiyatı SELL fiyatına eşit veya yüksek olmalı
         return buy.getPrice() >= sell.getPrice();
     }
+    @PostConstruct
+    public void loadWaitingOrders() {
 
+        List<Order> waitingOrders =
+                orderRepository.findByStatus("WAITING");
+
+        System.out.println(
+                "Veritabanından bekleyen emirler yükleniyor: "
+                        + waitingOrders.size()
+        );
+
+        for (Order order : waitingOrders) {
+
+            if ("BUY".equalsIgnoreCase(order.getSide())) {
+
+                buyQueue.add(order);
+
+            } else {
+
+                sellQueue.add(order);
+            }
+
+            System.out.println(
+                    "Queue'ya geri yüklendi: "
+                            + order.getOrderId()
+                            + " | "
+                            + order.getSymbol()
+                            + " | "
+                            + order.getSide()
+                            + " | "
+                            + order.getQty()
+            );
+        }
+    }
 
 
 

@@ -54,6 +54,7 @@
         <th>Side</th>
         <th>Customer</th>
         <th>Price</th>
+        <th>Status</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -116,6 +117,8 @@
             <td>${order.side}</td>
             <td>${order.customerName}</td>
             <td>${order.price ?? "MARKET"}</td>
+            <td>${order.status ?? "NEW"}</td>
+
             <td>
                 <button onclick="cancelOrder(${order.id})">
                     Cancel

@@ -81,7 +81,7 @@ public class OrderService {
 			return null;
 		}
 
-		// Matching Engine'e Replace isteği gönder
+		// Matching Engine'e replace gönder
 		fixApplication.sendReplaceOrder(
 				order.getOrderId(),
 				order.getSymbol(),
@@ -90,9 +90,10 @@ public class OrderService {
 				newPrice
 		);
 
-		// Kendi veritabanımızdaki emri de güncelle
+		// Order Service'in DB'sini de güncelle
 		order.setQty(newQty);
 		order.setPrice(newPrice);
+		order.setStatus("WAITING");
 
 		return orderRepository.save(order);
 	}
@@ -106,21 +107,23 @@ public class OrderService {
 			return;
 		}
 
-		// Eski kayıtlarda FIX orderId yoksa
-		// sadece H2 kaydını sil
+		// FIX orderId yoksa da kaydı silmek yerine CANCELLED yap
 		if (order.getOrderId() == null || order.getOrderId().isBlank()) {
 
-			orderRepository.deleteById(id);
+			order.setStatus("CANCELLED");
+			orderRepository.save(order);
 			return;
 		}
 
-		// Yeni kayıtlarda FIX üzerinden Cancel gönder
+		// Matching Engine'e iptal isteği gönder
 		fixApplication.sendCancelOrder(
 				order.getOrderId(),
 				order.getSymbol(),
 				order.getSide()
 		);
 
-		orderRepository.deleteById(id);
+		// Kendi veritabanımızda da iptal edildi olarak tut
+		order.setStatus("CANCELLED");
+		orderRepository.save(order);
 	}
 }
