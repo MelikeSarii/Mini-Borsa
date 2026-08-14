@@ -24,18 +24,21 @@ import quickfix.fix44.OrderCancelRequest;
 public class FixApplication implements Application {
 
     private final MatchingEngine matchingEngine;
-
-    public FixApplication(MatchingEngine matchingEngine) {
+    private final ExecutionReportService executionReportService;
+    public FixApplication(MatchingEngine matchingEngine, ExecutionReportService executionReportService) {
         this.matchingEngine = matchingEngine;
+        this.executionReportService = executionReportService;
     }
 
     @Override
     public void onCreate(SessionID sessionId) {
+        executionReportService.setSessionId(sessionId);
         System.out.println("FIX Session oluşturuldu: " + sessionId);
     }
 
     @Override
     public void onLogon(SessionID sessionId) {
+        executionReportService.setSessionId(sessionId);
         System.out.println("FIX Session LOGON oldu: " + sessionId);
     }
 

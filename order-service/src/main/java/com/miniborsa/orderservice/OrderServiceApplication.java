@@ -9,7 +9,7 @@ import quickfix.FileStoreFactory;
 import quickfix.Initiator;
 import quickfix.SessionSettings;
 import quickfix.SocketInitiator;
-
+import org.springframework.context.ConfigurableApplicationContext;
 import com.miniborsa.orderservice.fix.FixApplication;
 
 @SpringBootApplication
@@ -18,14 +18,16 @@ public class OrderServiceApplication {
 	public static void main(String[] args) throws Exception {
 
 		// Spring Boot'u başlat
-		SpringApplication.run(OrderServiceApplication.class, args);
+		ConfigurableApplicationContext context =
+				SpringApplication.run(OrderServiceApplication.class, args);
 
 		// FIX ayarlarını oku
 		SessionSettings settings =
 				new SessionSettings("src/main/resources/initiator.cfg");
 
-		// FIX uygulamamız
-		FixApplication application = new FixApplication();
+		// Spring'in oluşturduğu FixApplication bean'ini al
+		FixApplication application =
+				context.getBean(FixApplication.class);
 
 		// FIX mesajlarının saklanması
 		FileStoreFactory storeFactory =

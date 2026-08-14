@@ -1,25 +1,32 @@
 package com.example.matchingengine.engine;
-
 import com.example.matchingengine.model.Order;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-
+import com.example.matchingengine.fix.ExecutionReportService;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import com.example.matchingengine.repository.OrderRepository;
 
 @Service
 public class MatchingEngine {
 
+    public MatchingEngine(
+            ExecutionReportService executionReportService,
+            OrderRepository orderRepository) {
+
+        this.executionReportService = executionReportService;
+        this.orderRepository = orderRepository;
+    }
     // İki ayrı emir kuyruğumuz var
     private final Queue<Order> buyQueue = new ConcurrentLinkedQueue<>();
     private final Queue<Order> sellQueue = new ConcurrentLinkedQueue<>();
-
-
+    private final ExecutionReportService executionReportService;
+    private final OrderRepository orderRepository;
     // Gelen emri BUY veya SELL kuyruğuna koyuyoruz
     public void addOrder(Order order) {//gelen emti buy sell kuyruğuna ekler
 
         order.setStatus("NEW");
-
+        orderRepository.save(order);
         if ("BUY".equalsIgnoreCase(order.getSide())) {
 
             buyQueue.add(order);
@@ -67,8 +74,7 @@ public class MatchingEngine {
         if (buyQueue.isEmpty() || sellQueue.isEmpty()) {
             return;
         }
-        System.out.println("BUY QUEUE: " + buyQueue.size());
-        System.out.println("SELL QUEUE: " + sellQueue.size());
+
 
         // Bir BUY emri seçiyoruz
         for (Order buy : buyQueue) {
@@ -108,7 +114,26 @@ public class MatchingEngine {
                 sell.setQty(
                         sell.getQty() - matchedQty
                 );
+                try {
 
+                    executionReportService.sendExecutionReport(
+                            buy,
+                            matchedQty
+                    );
+
+                    executionReportService.sendExecutionReport(
+                            sell,
+                            matchedQty
+                    );
+
+                } catch (Exception e) {
+
+                    System.out.println(
+                            "Execution Report gönderilemedi!"
+                    );
+
+                    e.printStackTrace();
+                }
 
                 // BUY tamamen gerçekleşti
                 if (buy.getQty() == 0) {

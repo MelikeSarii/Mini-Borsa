@@ -1,20 +1,35 @@
 package com.example.matchingengine.model;
 
-public class Order {//veriyi taşıyan sınıf
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "matching_orders")
+public class Order {
+
+    @Id
     private String orderId;
+
     private String symbol;
     private int qty;
-    private String side; // BUY / SELL
+    private String side;
     private String customerName;
     private Double price;
-    private String status; // NEW / WAITING / PARTIALLY_FILLED / FILLED
+    private String status;
 
     public Order() {
     }
 
-    public Order(String orderId,String symbol, int qty, String side,
-                 String customerName, Double price) {
-        this.orderId=orderId;
+    public Order(
+            String orderId,
+            String symbol,
+            int qty,
+            String side,
+            String customerName,
+            Double price) {
+
+        this.orderId = orderId;
         this.symbol = symbol;
         this.qty = qty;
         this.side = side;
@@ -22,10 +37,13 @@ public class Order {//veriyi taşıyan sınıf
         this.price = price;
         this.status = "NEW";
     }
-    public String getOrderId(){return orderId;}
-    public void setOrderId(String orderId)
-    {
-        this.orderId=orderId;
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public String getSymbol() {

@@ -106,6 +106,15 @@ public class OrderService {
 			return;
 		}
 
+		// Eski kayıtlarda FIX orderId yoksa
+		// sadece H2 kaydını sil
+		if (order.getOrderId() == null || order.getOrderId().isBlank()) {
+
+			orderRepository.deleteById(id);
+			return;
+		}
+
+		// Yeni kayıtlarda FIX üzerinden Cancel gönder
 		fixApplication.sendCancelOrder(
 				order.getOrderId(),
 				order.getSymbol(),

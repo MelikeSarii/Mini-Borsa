@@ -18,8 +18,16 @@ public class Order {
     private String side;
     private String customerName;
     private Double price;
+    private String status;
 
     public Order() {
+    }
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     public Long getId() {
         return id;

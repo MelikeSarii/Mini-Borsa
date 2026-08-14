@@ -196,3 +196,233 @@
 20260812-12:18:57: MINA session created: local=/127.0.0.1:51125, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
 20260812-12:18:58: Initiated logon request
 20260812-12:18:58: Received logon
+20260813-05:21:46: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-05:21:46: Session state is not current; resetting FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-05:21:46: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-05:21:46: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-05:21:46: MINA session created: local=/127.0.0.1:22738, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-05:21:47: Initiated logon request
+20260813-05:21:48: Received logon
+20260813-05:27:39: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
+20260813-05:27:40: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-05:59:28: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-05:59:28: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-05:59:28: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-05:59:28: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-05:59:58: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:00:28: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:01:52: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-06:01:52: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-06:01:52: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-06:01:52: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:02:22: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:02:52: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:03:22: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:03:52: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:04:22: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:04:52: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:08:12: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-06:08:12: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-06:08:12: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-06:08:12: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:08:42: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:09:12: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:28:35: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-06:28:35: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-06:28:35: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-06:28:35: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:29:05: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:38:37: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-06:38:37: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-06:38:37: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-06:38:37: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:39:07: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:39:37: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:42:13: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-06:42:13: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-06:42:13: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-06:42:13: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:42:43: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:43:14: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:43:44: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:44:14: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:44:44: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:45:14: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:45:44: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:46:15: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:46:45: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:47:15: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:47:45: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:48:30: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-06:48:30: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-06:48:30: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-06:48:30: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:49:00: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:49:30: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:50:00: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:50:31: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:51:01: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:51:31: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:52:01: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:52:31: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:53:02: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:53:32: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:54:02: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:54:32: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:55:02: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:55:33: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:56:03: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:56:33: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:57:03: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:57:34: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:58:04: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:58:34: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:59:04: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-06:59:34: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:00:05: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:00:35: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:01:05: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:01:35: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:02:06: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:02:36: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:03:06: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:03:36: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:04:07: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:04:37: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:05:07: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:05:37: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:06:08: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:06:38: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:07:08: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:07:38: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:08:09: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:08:39: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:09:09: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:09:39: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:10:09: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:10:40: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:11:10: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:11:40: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:12:10: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:12:41: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:13:11: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:13:41: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:14:11: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:14:42: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:15:12: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:15:42: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:16:12: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:16:43: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:26:40: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-07:26:40: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-07:26:40: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-07:26:40: MINA session created: local=/127.0.0.1:29278, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-07:26:41: Initiated logon request
+20260813-07:26:41: Received logon
+20260813-07:26:41: Received ResendRequest FROM: 14 TO: infinity
+20260813-07:26:41: Resending message: 14
+20260813-07:26:41: Resending message: 15
+20260813-07:26:41: Resending message: 16
+20260813-07:26:41: Resending message: 17
+20260813-07:26:41: Resending message: 18
+20260813-07:26:41: Resending message: 19
+20260813-07:26:41: Resending message: 20
+20260813-07:26:41: Sent SequenceReset TO: 22
+20260813-07:28:24: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
+20260813-07:28:25: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:28:56: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:29:26: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:29:56: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:30:19: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-07:30:19: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-07:30:19: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-07:30:19: MINA session created: local=/127.0.0.1:52166, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-07:30:20: Initiated logon request
+20260813-07:30:20: Received logon
+20260813-07:33:05: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
+20260813-07:33:06: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-07:33:26: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-07:33:26: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-07:33:26: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-07:33:26: MINA session created: local=/127.0.0.1:54446, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-07:33:27: Initiated logon request
+20260813-07:33:27: Received logon
+20260813-07:40:41: Disconnecting: Socket exception (localhost/127.0.0.1:9876): java.net.SocketException: Connection reset
+20260813-07:40:42: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-08:34:03: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-08:34:03: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-08:34:03: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-08:34:03: MINA session created: local=/127.0.0.1:64600, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-08:34:04: Initiated logon request
+20260813-08:34:04: Received logon
+20260813-10:15:22: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-10:15:22: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-10:15:22: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-10:15:22: MINA session created: local=/127.0.0.1:43945, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-10:15:23: Initiated logon request
+20260813-10:15:23: Received logon
+20260813-10:16:47: Rejecting invalid message: quickfix.FieldException: Required tag missing, field=37: 8=FIX.4.49=18835=834=4449=MATCHING_ENGINE52=20260813-10:16:47.20756=ORDER_SERVICE6=7896311=21712f8f-d8e7-4da7-a940-1dee3063371a14=1217=0ac30016-6797-4e26-b83d-e926db43a5e939=254=1150=2151=010=132
+20260813-10:16:47: Reject sent for message 44: Required tag missing, field=37
+20260813-10:16:47: Rejecting invalid message: quickfix.FieldException: Required tag missing, field=37: 8=FIX.4.49=18835=834=4549=MATCHING_ENGINE52=20260813-10:16:47.20956=ORDER_SERVICE6=7896311=4a47b9a3-9bcf-4f8d-9dde-d7fcfbeaeb5214=1217=37ca6555-388a-4f5a-ba54-9b4ddeb5325639=154=2150=1151=810=177
+20260813-10:16:47: Reject sent for message 45: Required tag missing, field=37
+20260813-10:17:10: Sent test request TEST
+20260813-10:29:48: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-10:29:48: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-10:29:48: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-10:29:48: MINA session created: local=/127.0.0.1:45949, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-10:29:49: Initiated logon request
+20260813-10:29:49: Received logon
+20260813-10:30:23: Rejecting invalid message: quickfix.FieldException: Required tag missing, field=55: 8=FIX.4.49=22835=834=6949=MATCHING_ENGINE52=20260813-10:30:23.76756=ORDER_SERVICE6=10000011=62387674-392b-48bd-a7b3-13df1b83436a14=817=99ef3f4e-ba52-44f1-92f0-f52441de665737=62387674-392b-48bd-a7b3-13df1b83436a39=254=1150=2151=010=222
+20260813-10:30:23: Reject sent for message 69: Required tag missing, field=55
+20260813-10:30:23: Rejecting invalid message: quickfix.FieldException: Required tag missing, field=55: 8=FIX.4.49=22835=834=7049=MATCHING_ENGINE52=20260813-10:30:23.76956=ORDER_SERVICE6=7896311=75f1e5c5-4435-42a4-a67b-17b720d52b9e14=817=6a6b9ba9-07c8-49dd-9bb2-e54e7497848f37=75f1e5c5-4435-42a4-a67b-17b720d52b9e39=154=2150=1151=1210=144
+20260813-10:30:23: Reject sent for message 70: Required tag missing, field=55
+20260813-10:36:12: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-10:36:12: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-10:36:12: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-10:36:12: MINA session created: local=/127.0.0.1:58911, class org.apache.mina.transport.socket.nio.NioSocketSession, remote=localhost/127.0.0.1:9876
+20260813-10:36:13: Initiated logon request
+20260813-10:36:13: Received logon
+20260813-12:34:59: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-12:34:59: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-12:34:59: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-12:34:59: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:35:43: Session FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE schedule is daily, 00:00:00-UTC - 23:59:59-UTC
+20260813-12:35:43: Created session: FIX.4.4:ORDER_SERVICE->MATCHING_ENGINE
+20260813-12:35:43: Configured socket addresses for session: [localhost/127.0.0.1:9876]
+20260813-12:35:43: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:36:13: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:36:43: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:37:13: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:37:44: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:38:14: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:38:44: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:39:14: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:39:45: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:40:15: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:40:45: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:41:15: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:41:46: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:42:16: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:42:46: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:43:16: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:43:47: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:44:17: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:44:47: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:45:17: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:45:48: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:46:18: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:46:48: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:47:18: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:47:48: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:48:19: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:48:49: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:49:19: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:49:49: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:50:19: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:50:50: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:51:20: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:51:50: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:52:20: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:52:51: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:53:21: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)
+20260813-12:53:51: java.net.ConnectException during connection to localhost/127.0.0.1:9876: java.net.ConnectException: Connection refused: getsockopt (Next retry in 30000 milliseconds)

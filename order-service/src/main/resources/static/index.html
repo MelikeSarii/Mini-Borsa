@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Borsa</title>
+</head>
+<body>
+
+<h1>Mini Borsa</h1>
+
+<h2>Yeni Emir</h2>
+
+<form id="orderForm">
+
+    <label>Symbol:</label>
+    <input type="text" id="symbol" required>
+    <br><br>
+
+    <label>Qty:</label>
+    <input type="number" id="qty" required>
+    <br><br>
+
+    <label>Side:</label>
+    <select id="side">
+        <option value="BUY">BUY</option>
+        <option value="SELL">SELL</option>
+    </select>
+    <br><br>
+
+    <label>Customer Name:</label>
+    <input type="text" id="customerName" required>
+    <br><br>
+
+    <label>Price:</label>
+    <input type="number" step="0.01" id="price">
+    <br><br>
+
+    <button type="submit">New Order</button>
+
+</form>
+
+<hr>
+
+<h2>Emirler</h2>
+
+<button onclick="getOrders()">Emirleri Getir</button>
+
+<table border="1" id="ordersTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Symbol</th>
+        <th>Qty</th>
+        <th>Side</th>
+        <th>Customer</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody id="ordersBody"></tbody>
+</table>
+
+<script>
+
+    document.getElementById("orderForm").addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const order = {
+            symbol: document.getElementById("symbol").value,
+            qty: Number(document.getElementById("qty").value),
+            side: document.getElementById("side").value,
+            customerName: document.getElementById("customerName").value,
+            price: document.getElementById("price").value === ""
+                ? null
+                : Number(document.getElementById("price").value)
+        };
+
+        const response = await fetch("/order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(order)
+        });
+
+        const result = await response.json();
+
+        console.log("Yeni emir:", result);
+
+        alert("Emir gönderildi!");
+
+        getOrders();
+    });
+
+
+    async function getOrders() {
+
+        const response = await fetch("/order");
+
+        const orders = await response.json();
+
+        const tbody = document.getElementById("ordersBody");
+
+        tbody.innerHTML = "";
+
+        orders.forEach(order => {
+
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+            <td>${order.id}</td>
+            <td>${order.symbol}</td>
+            <td>${order.qty}</td>
+            <td>${order.side}</td>
+            <td>${order.customerName}</td>
+            <td>${order.price ?? "MARKET"}</td>
+            <td>
+                <button onclick="cancelOrder(${order.id})">
+                    Cancel
+                </button>
+                <button onclick="replaceOrder(${order.id}, ${order.qty}, ${order.price ?? 0})">
+                    Replace
+                </button>
+            </td>
+        `;
+
+            tbody.appendChild(row);
+        });
+    }
+
+
+    async function cancelOrder(id) {
+
+        const response = await fetch(`/order/${id}`, {
+            method: "DELETE"
+        });
+
+        if (response.ok) {
+            alert("Emir iptal edildi.");
+            getOrders();
+        } else {
+            alert("Cancel başarısız.");
+        }
+    }
+
+
+    async function replaceOrder(id, oldQty, oldPrice) {
+
+        const newQty = prompt("Yeni miktar:", oldQty);
+
+        if (newQty === null) {
+            return;
+        }
+
+        const newPrice = prompt("Yeni fiyat:", oldPrice);
+
+        if (newPrice === null) {
+            return;
+        }
+
+        const response = await fetch(`/order/${id}`, {
+
+            method: "PUT",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                qty: Number(newQty),
+                price: Number(newPrice)
+            })
+        });
+
+        if (response.ok) {
+            alert("Emir güncellendi.");
+            getOrders();
+        } else {
+            alert("Replace başarısız.");
+        }
+    }
+
+</script>
+
+</body>
+</html>
